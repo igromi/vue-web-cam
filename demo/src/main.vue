@@ -1,7 +1,19 @@
 <template>
     <div class="container">
-        
-                    <vue-web-cam
+        <table>
+       
+           
+           <tr>
+               <th>
+                   <th> 
+                       <div class="container">
+                        <h2>AMBAR</h2>
+                        <h2>XL </h2>
+                       </div>
+                        
+                   </th>
+                    <th>
+                     <vue-web-cam
                         ref="webcam"
                         :device-id="deviceId"
                         width="100%"
@@ -11,7 +23,24 @@
                         @cameras="onCameras"
                         @camera-change="onCameraChange"
                     />
+
+                    </th>
+
+               <th>
+                   <div class="container">
+                    <h2>AMBAR</h2>
+                    <h2>XL </h2>
+                   </div>
+              </th>
+           </tr>
+                  
+        </table>
+         
+        
         </div>
+
+       
+
 </template>
 
 <script>
