@@ -1,10 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Current Camera</h2>
-                <code v-if="device">{{ device.label }}</code>
-                <div class="border">
+        
                     <vue-web-cam
                         ref="webcam"
                         :device-id="deviceId"
@@ -15,34 +11,7 @@
                         @cameras="onCameras"
                         @camera-change="onCameraChange"
                     />
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <select v-model="camera">
-                            <option>-- Select Device --</option>
-                            <option
-                                v-for="device in devices"
-                                :key="device.deviceId"
-                                :value="device.deviceId"
-                            >{{ device.label }}</option>
-                        </select>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-primary" @click="onCapture">Capture Photo</button>
-                        <button type="button" class="btn btn-danger" @click="onStop">Stop Camera</button>
-                        <button type="button" class="btn btn-success" @click="onStart">Start Camera</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h2>Captured Image</h2>
-                <figure class="figure">
-                    <img :src="img" class="img-responsive" />
-                </figure>
-            </div>
         </div>
-    </div>
 </template>
 
 <script>
