@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+
+    <div class="container p-3 my-3 border">
+        <div>
+        </div>
         <table>
        
            
@@ -7,12 +10,12 @@
                <th>
                    <th> 
                        <div class="container">
-                        <h2>AMBAR</h2>
-                        <h2>XL </h2>
+                        <h1>Ambar XL</h1>                       
                        </div>
                         
                    </th>
                     <th>
+                     <div class="container">   
                      <vue-web-cam
                         ref="webcam"
                         :device-id="deviceId"
@@ -23,14 +26,14 @@
                         @cameras="onCameras"
                         @camera-change="onCameraChange"
                     />
-
+                    </div>
                     </th>
 
                <th>
                    <div class="container">
-                    <h2>AMBAR</h2>
-                    <h2>XL </h2>
+                    <h1>Verde  L</h1>
                    </div>
+            
               </th>
            </tr>
                   
@@ -108,3 +111,4 @@ export default {
     }
 };
 </script>
+
