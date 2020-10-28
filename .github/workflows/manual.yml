@@ -1,0 +1,4 @@
+- name: Vuepress to GitHub Pages
+  # You may pin to the exact commit or the version.
+  # uses: testthedocs/github-pages-deploy-action@e01a9c5bf6ca0d94c2b168824ed0c0e96429120b
+  uses: testthedocs/github-pages-deploy-action@0.0.2
