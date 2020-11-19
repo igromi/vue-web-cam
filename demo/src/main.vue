@@ -12,7 +12,7 @@
                <th>
                    <th> 
                        <div class="container">
-                        <h1 class="text-success">Ambar XL</h1>                     
+                        <h1 class="text-success">{{cam1}}</h1>                     
                        </div>
                         
                    </th>
@@ -33,7 +33,7 @@
 
                <th>
                    <div class="container">
-                    <h1 class="text-success">Verde  L</h1>
+                    <h1 class="text-success">{{cam2}}</h1>
                    </div>
             
               </th>
@@ -50,6 +50,7 @@
 
 <script>
 import { WebCam } from "../../src";
+import dataColor from "/var/www/html/color.json"
 
 export default {
     name: "App",
@@ -61,7 +62,9 @@ export default {
             img: null,
             camera: null,
             deviceId: null,
-            devices: []
+            devices: [],
+            cam1: dataColor.CAM1,
+            cam2: dataColor.CAM2
         };
     },
     computed: {
@@ -84,7 +87,7 @@ export default {
     },
     methods: {
         onCapture() {
-            this.img = this.$refs.webcam.capture();
+            this.img = this.$refs.webcam.capture();           
         },
         onStarted(stream) {
             console.log("On Started Event", stream);

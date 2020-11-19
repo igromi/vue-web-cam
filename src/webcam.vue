@@ -56,7 +56,7 @@ export default {
       source: null,
       canvas: null,
       camerasListEmitted: false,
-      cameras: []
+      cameras: [],
     };
   },
 
