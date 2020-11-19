@@ -1,10 +1,6 @@
 <template>
 
     <div class="container p-3 my-3 border">
-        <div >
-            <h2 class="text-danger">Detectando...</h2>
-            <p></p>
-        </div>
         <table>
        
            
@@ -12,7 +8,7 @@
                <th>
                    <th> 
                        <div class="container">
-                        <h1 class="text-success">{{cam1}}</h1>                     
+                        <h1 class="text-success">{{cam2}}</h1>                     
                        </div>
                         
                    </th>
@@ -33,7 +29,7 @@
 
                <th>
                    <div class="container">
-                    <h1 class="text-success">{{cam2}}</h1>
+                    <h1 class="text-success">{{cam1}}</h1>
                    </div>
             
               </th>
