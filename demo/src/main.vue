@@ -46,7 +46,7 @@
 
 <script>
 import { WebCam } from "../../src";
-import dataColor from "/var/www/html/color.json"
+import dataColor from "/var/www/html/data.json"
 
 export default {
     name: "App",
