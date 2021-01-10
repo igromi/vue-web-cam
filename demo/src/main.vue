@@ -1,19 +1,21 @@
 <template>
 
     <div class="container p-3 my-3 border">
-        <table>
-       
-           
+        <table>         
            <tr>
                <th>
                    <th> 
                        <div class="container">
-                        <h1 class="text-success">{{cam2}}</h1>                     
+                        <h1 class="text-success">{{colorCam2}}</h1>                     
+                       </div>
+                        <div class="container">
+                        <h1 class="text-danger">{{calibreCam2}}</h1>                     
                        </div>
                         
                    </th>
                     <th>
-                     <div class="container">   
+
+                     <div class="container ">   
                      <vue-web-cam
                         ref="webcam"
                         :device-id="deviceId"
@@ -24,13 +26,17 @@
                         @cameras="onCameras"
                         @camera-change="onCameraChange"
                     />
+                 
                     </div>
                     </th>
 
                <th>
                    <div class="container">
-                    <h1 class="text-success">{{cam1}}</h1>
+                    <h1 class="text-success">{{colorCam1}}</h1>
                    </div>
+                    <div class="container">
+                        <h1 class="text-danger">{{calibreCam1}}</h1>                     
+                    </div>
             
               </th>
            </tr>
@@ -40,13 +46,11 @@
         
         </div>
 
-       
-
 </template>
 
 <script>
 import { WebCam } from "../../src";
-import dataColor from "/var/www/html/data.json"
+import dataDetector from "/var/www/html/data.json"
 
 export default {
     name: "App",
@@ -59,8 +63,10 @@ export default {
             camera: null,
             deviceId: null,
             devices: [],
-            cam1: dataColor.CAM1,
-            cam2: dataColor.CAM2
+            colorCam1: dataDetector.color.CAM1,
+            colorCam2: dataDetector.color.CAM2,
+            calibreCam1 : dataDetector.calibre.CAM1,
+            calibreCam2 : dataDetector.calibre.CAM2
         };
     },
     computed: {
@@ -112,4 +118,3 @@ export default {
     }
 };
 </script>
-
