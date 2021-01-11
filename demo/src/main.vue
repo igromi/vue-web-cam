@@ -69,6 +69,7 @@ export default {
             calibreCam2 : dataDetector.calibre.CAM2
         };
     },
+    
     computed: {
         device: function() {
             return this.devices.find(n => n.deviceId === this.deviceId);
