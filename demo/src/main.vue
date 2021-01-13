@@ -42,15 +42,14 @@
            </tr>
                   
         </table>
-         
-        
+
         </div>
 
 </template>
 
 <script>
 import { WebCam } from "../../src";
-import dataDetector from "/var/www/html/data.json"
+import axios from 'axios';
 
 export default {
     name: "App",
@@ -63,13 +62,20 @@ export default {
             camera: null,
             deviceId: null,
             devices: [],
-            colorCam1: dataDetector.color.CAM1,
-            colorCam2: dataDetector.color.CAM2,
-            calibreCam1 : dataDetector.calibre.CAM1,
-            calibreCam2 : dataDetector.calibre.CAM2
+            colorCam1: "",
+            colorCam2: "",
+            calibreCam1 : "",
+            calibreCam2 : "",
+            urlAPI:"http://localhost/data.json",
+            info:""
         };
     },
-    
+
+    created(){
+       
+        this.interval = setInterval(() =>  this.loadData(), 1000);
+       
+    },
     computed: {
         device: function() {
             return this.devices.find(n => n.deviceId === this.deviceId);
@@ -115,7 +121,17 @@ export default {
             this.deviceId = deviceId;
             this.camera = deviceId;
             console.log("On Camera Change Event", deviceId);
-        }
+        },
+        loadData() {
+            axios
+            .get(this.urlAPI)
+            .then(response => (this.info = response));
+           
+           this.colorCam1=this.info.data.color.CAM1
+           this.colorCam2=this.info.data.color.CAM2
+           this.calibreCam1=this.info.data.calibre.CAM1
+           this.calibreCam2=this.info.data.calibre.CAM2
+    },
     }
 };
 </script>

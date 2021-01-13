@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 
+
 module.exports = function nuxtVueWebCam() {
   this.addPlugin({
     ssr: false,
