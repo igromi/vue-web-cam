@@ -73,7 +73,7 @@ export default {
 
     created(){
        
-        this.interval = setInterval(() =>  this.loadData(), 1000);
+        this.interval = setInterval(() =>  this.loadData(), 100);
        
     },
     computed: {
