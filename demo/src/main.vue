@@ -35,7 +35,7 @@
                     <h1 style="color:black">{{color1Cam1}}%</h1>
                    </div>
                     <div class="container">
-                        <h1 style="color:pink">{{color2Cam1}}%</h1>                     
+                        <h1 style="color:red">{{color2Cam1}}%</h1>                     
                     </div>
             
               </th>
@@ -126,8 +126,8 @@ export default {
             .then(response => (this.info = response));
            
 
-           let negras = parseInt(this.info.data.CAM1.negra)
-           let rosadas = parseInt(this.info.data.CAM1.rosada)
+           let negras = Math.trunc(parseInt(this.info.data.CAM1.negra))
+           let rosadas = Math.trunc(parseInt(this.info.data.CAM1.rosada))
 
            this.color1Cam1= negras/(negras+rosadas)*100
            this.color2Cam1= rosadas/(negras+rosadas)*100
