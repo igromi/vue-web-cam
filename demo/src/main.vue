@@ -85,10 +85,10 @@ export default {
         },
         devices: function() {
             // Once we have a list select the first one
-            const [first, ...tail] = this.devices;
+            const [first,second, ...tail] = this.devices;
             if (first) {
-                this.camera = first.deviceId;
-                this.deviceId = first.deviceId;
+                this.camera = second.deviceId;
+                this.deviceId = second.deviceId;
             }
         }
     },
