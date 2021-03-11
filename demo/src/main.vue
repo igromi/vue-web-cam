@@ -6,10 +6,10 @@
                <th>
                    <th> 
                        <div class="container">
-                        <h1 class="text-success">{{colorCam2}}</h1>                     
+                        <h1 class="text-success"></h1>                     
                        </div>
                         <div class="container">
-                        <h1 class="text-danger">{{calibreCam2}}</h1>                     
+                        <h1 class="text-danger"></h1>                     
                        </div>
                         
                    </th>
@@ -32,10 +32,10 @@
 
                <th>
                    <div class="container">
-                    <h1 class="text-success">{{colorCam1}}</h1>
+                    <h1 class="text-success">{{color1Cam1}}</h1>
                    </div>
                     <div class="container">
-                        <h1 class="text-danger">{{calibreCam1}}</h1>                     
+                        <h1 class="text-danger">{{color2Cam1}}</h1>                     
                     </div>
             
               </th>
@@ -62,10 +62,8 @@ export default {
             camera: null,
             deviceId: null,
             devices: [],
-            colorCam1: "",
-            colorCam2: "",
-            calibreCam1 : "",
-            calibreCam2 : "",
+            color1Cam1: "",
+            color2Cam1: "",
             urlAPI:"http://localhost/data.json",
             info:""
         };
@@ -127,11 +125,9 @@ export default {
             .get(this.urlAPI)
             .then(response => (this.info = response));
            
-           this.colorCam1=this.info.data.color.CAM1
-           this.colorCam2=this.info.data.color.CAM2
-           this.calibreCam1=this.info.data.calibre.CAM1
-           this.calibreCam2=this.info.data.calibre.CAM2
-    },
+           this.color1Cam1=this.info.data.CAM1.negra
+           this.color2Cam1=this.info.data.CAM1.rosada
+        },
     }
 };
 </script>
