@@ -126,11 +126,11 @@ export default {
             .then(response => (this.info = response));
            
 
-           let negras = Math.trunc(parseInt(this.info.data.CAM1.negra))
-           let rosadas = Math.trunc(parseInt(this.info.data.CAM1.rosada))
+           let negras = parseInt(this.info.data.CAM1.negra)
+           let rosadas = parseInt(this.info.data.CAM1.rosada)
 
-           this.color1Cam1= negras/(negras+rosadas)*100
-           this.color2Cam1= rosadas/(negras+rosadas)*100
+           this.color1Cam1= Math.trunc(negras/(negras+rosadas)*100)
+           this.color2Cam1= Math.trunc(rosadas/(negras+rosadas)*100)
         },
     }
 };
