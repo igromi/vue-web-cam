@@ -1,6 +1,7 @@
 <template>
 
     <div class="container p-3 my-3 border">
+        
         <table>         
            <tr>
                <th>
@@ -14,7 +15,9 @@
                         
                    </th>
                     <th>
-
+                     <div class="container">   
+                        <h1> Sweet Celebration</h1> 
+                     </div>
                      <div class="container ">   
                      <img  v-bind:src="urlIMG">
                  
@@ -23,10 +26,10 @@
 
                <th>
                    <div class="container">
-                    <h1 style="color:black">{{color1Cam1}}%</h1>
+                    <h1 style="color:black; font-size: 80px; ">{{color1Cam1}}%</h1>
                    </div>
                     <div class="container">
-                        <h1 style="color:red">{{color2Cam1}}%</h1>                     
+                        <h1 style="color:red; font-size: 80px;">{{color2Cam1}}%</h1>                     
                     </div>
             
               </th>
@@ -39,7 +42,6 @@
 </template>
 
 <script>
-import { WebCam } from "../../src";
 import axios from 'axios';
 
 export default {
@@ -81,10 +83,6 @@ export default {
 
            this.color1Cam1= Math.trunc(negras/(negras+rosadas)*100);
            this.color2Cam1= Math.trunc(rosadas/(negras+rosadas)*100);
-           
-           this.urlIMG="./uvas.jpg";
-           this.urlIMG="";
-           this.urlIMG="./uvas.jpg";
 
         },
     }
